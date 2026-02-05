@@ -16,9 +16,9 @@ export function Navigation() {
   ];
 
   return (
-    <nav className="border-b">
+    <nav className="border-b bg-background/80 backdrop-blur-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <Link href="/" className="text-2xl font-bold text-blue-600">
+        <Link href="/" className="text-2xl font-bold text-primary font-display">
           TaskFlow
         </Link>
 
@@ -28,7 +28,7 @@ export function Navigation() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-gray-600 hover:text-gray-900"
+              className="text-muted-foreground hover:text-foreground transition-colors"
             >
               {link.label}
             </Link>
@@ -62,7 +62,7 @@ export function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-600 hover:text-gray-900 py-2"
+                className="text-muted-foreground hover:text-foreground py-2 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}

@@ -85,10 +85,10 @@ function FeatureSkeleton() {
     <Card className="h-full">
       <CardHeader>
         <div className="animate-pulse">
-          <div className="w-12 h-12 bg-gray-200 rounded mb-4" />
-          <div className="h-6 bg-gray-200 rounded w-3/4 mb-2" />
-          <div className="h-4 bg-gray-200 rounded w-full mb-1" />
-          <div className="h-4 bg-gray-200 rounded w-5/6" />
+          <div className="w-12 h-12 bg-muted rounded mb-4" />
+          <div className="h-6 bg-muted rounded w-3/4 mb-2" />
+          <div className="h-4 bg-muted rounded w-full mb-1" />
+          <div className="h-4 bg-muted rounded w-5/6" />
         </div>
       </CardHeader>
     </Card>
@@ -124,13 +124,13 @@ export function Features() {
   }, []);
 
   return (
-    <section id="features" className="py-20 bg-gray-50">
+    <section id="features" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
+          <h2 className="text-4xl font-bold mb-4 font-display">
             Everything your team needs to succeed
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-muted-foreground">
             Powerful features that help remote teams collaborate and ship faster
           </p>
         </div>
@@ -151,13 +151,16 @@ export function Features() {
                   key={feature._id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ scale: 1.02 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <Card className="h-full hover:shadow-lg transition-shadow">
+                  <Card className="h-full hover:border-primary/50 hover:shadow-[0_0_15px_var(--glow-primary)] transition-all duration-300">
                     <CardHeader>
-                      <IconComponent className="w-12 h-12 text-blue-600 mb-4" />
-                      <CardTitle>{feature.title}</CardTitle>
+                      <motion.div whileHover={{ rotate: 5 }} transition={{ duration: 0.2 }}>
+                        <IconComponent className="w-12 h-12 text-primary mb-4" />
+                      </motion.div>
+                      <CardTitle className="font-display">{feature.title}</CardTitle>
                       <CardDescription className="text-base">
                         {feature.description}
                       </CardDescription>

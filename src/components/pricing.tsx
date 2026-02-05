@@ -86,23 +86,23 @@ function PricingSkeleton() {
     <Card className="h-full">
       <CardHeader>
         <div className="animate-pulse">
-          <div className="h-7 bg-gray-200 rounded w-1/2 mb-2" />
-          <div className="h-4 bg-gray-200 rounded w-3/4 mb-4" />
-          <div className="h-10 bg-gray-200 rounded w-1/3" />
+          <div className="h-7 bg-muted rounded w-1/2 mb-2" />
+          <div className="h-4 bg-muted rounded w-3/4 mb-4" />
+          <div className="h-10 bg-muted rounded w-1/3" />
         </div>
       </CardHeader>
       <CardContent>
         <div className="animate-pulse space-y-3">
-          <div className="h-4 bg-gray-200 rounded w-full" />
-          <div className="h-4 bg-gray-200 rounded w-5/6" />
-          <div className="h-4 bg-gray-200 rounded w-4/6" />
-          <div className="h-4 bg-gray-200 rounded w-full" />
-          <div className="h-4 bg-gray-200 rounded w-3/4" />
+          <div className="h-4 bg-muted rounded w-full" />
+          <div className="h-4 bg-muted rounded w-5/6" />
+          <div className="h-4 bg-muted rounded w-4/6" />
+          <div className="h-4 bg-muted rounded w-full" />
+          <div className="h-4 bg-muted rounded w-3/4" />
         </div>
       </CardContent>
       <CardFooter>
         <div className="animate-pulse w-full">
-          <div className="h-11 bg-gray-200 rounded w-full" />
+          <div className="h-11 bg-muted rounded w-full" />
         </div>
       </CardFooter>
     </Card>
@@ -144,10 +144,10 @@ export function Pricing() {
     <section id="pricing" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
+          <h2 className="text-4xl font-bold mb-4 font-display">
             Simple, transparent pricing
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-muted-foreground">
             Start free. Upgrade when you&apos;re ready. Cancel anytime.
           </p>
         </div>
@@ -170,16 +170,16 @@ export function Pricing() {
                 className="relative"
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
                     POPULAR
                   </div>
                 )}
 
                 <Card
-                  className={`h-full ${plan.popular ? "border-blue-600 border-2" : ""}`}
+                  className={`h-full ${plan.popular ? "border-primary border-2 glow-primary-sm" : ""}`}
                 >
                   <CardHeader>
-                    <CardTitle className="text-2xl">{plan.name}</CardTitle>
+                    <CardTitle className="text-2xl font-display">{plan.name}</CardTitle>
                     <CardDescription>{plan.description}</CardDescription>
                     <div className="mt-4">
                       {plan.price !== null ? (
@@ -187,7 +187,7 @@ export function Pricing() {
                           <span className="text-4xl font-bold">
                             ${plan.price}
                           </span>
-                          <span className="text-gray-600">/month</span>
+                          <span className="text-muted-foreground">/month</span>
                         </div>
                       ) : (
                         <div className="text-3xl font-bold">Custom</div>
@@ -202,8 +202,8 @@ export function Pricing() {
                           key={featureIndex}
                           className="flex items-start gap-3"
                         >
-                          <FiCheck className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                          <span className="text-gray-700">{feature}</span>
+                          <FiCheck className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
+                          <span className="text-muted-foreground">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -224,7 +224,7 @@ export function Pricing() {
           )}
         </div>
 
-        <p className="text-center text-sm text-gray-500 mt-8">
+        <p className="text-center text-sm text-muted-foreground mt-8">
           All plans include 14-day free trial. No credit card required.
         </p>
       </div>

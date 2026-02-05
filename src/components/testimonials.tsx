@@ -22,14 +22,14 @@ function TestimonialSkeleton() {
     <Card className="h-full">
       <CardContent className="pt-6">
         <div className="animate-pulse">
-          <div className="h-4 bg-gray-200 rounded mb-2 w-full" />
-          <div className="h-4 bg-gray-200 rounded mb-2 w-5/6" />
-          <div className="h-4 bg-gray-200 rounded mb-6 w-4/6" />
+          <div className="h-4 bg-muted rounded mb-2 w-full" />
+          <div className="h-4 bg-muted rounded mb-2 w-5/6" />
+          <div className="h-4 bg-muted rounded mb-6 w-4/6" />
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-gray-200 rounded-full" />
+            <div className="w-12 h-12 bg-muted rounded-full" />
             <div>
-              <div className="h-4 bg-gray-200 rounded w-24 mb-2" />
-              <div className="h-3 bg-gray-200 rounded w-32" />
+              <div className="h-4 bg-muted rounded w-24 mb-2" />
+              <div className="h-3 bg-muted rounded w-32" />
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@ function TestimonialSkeleton() {
 
 function AvatarFallback({ name }: { name: string }) {
   return (
-    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-semibold">
+    <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary font-semibold">
       {name.charAt(0)}
     </div>
   );
@@ -97,10 +97,10 @@ export function Testimonials() {
   }, []);
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
+          <h2 className="text-4xl font-bold mb-4 font-display">
             Loved by teams around the world
           </h2>
         </div>
@@ -127,9 +127,9 @@ export function Testimonials() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="h-full">
+                <Card className="h-full hover:border-primary/50 transition-colors">
                   <CardContent className="pt-6">
-                    <p className="text-gray-700 mb-6 italic">
+                    <p className="text-foreground mb-6 italic">
                       &quot;{testimonial.quote}&quot;
                     </p>
 
@@ -137,7 +137,7 @@ export function Testimonials() {
                       <TestimonialAvatar testimonial={testimonial} />
                       <div>
                         <p className="font-semibold">{testimonial.author}</p>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-muted-foreground">
                           {testimonial.role} at {testimonial.company}
                         </p>
                       </div>

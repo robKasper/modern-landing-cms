@@ -12,20 +12,22 @@ export function FinalCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto text-center bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-12 md:p-16"
+          className="max-w-4xl mx-auto text-center bg-gradient-to-br from-primary/20 via-background to-secondary/20 rounded-2xl p-12 md:p-16 border border-primary/30"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display">
             Ready to transform how your team works?
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 mb-8">
+          <p className="text-lg md:text-xl text-muted-foreground mb-8">
             Join 10,000+ teams shipping faster with TaskFlow
           </p>
 
-          <Button size="lg" className="text-lg px-8 py-6">
-            Start Free Trial
-          </Button>
+          <motion.div whileTap={{ scale: 0.98 }}>
+            <Button size="lg" className="text-lg px-8 py-6">
+              Start Free Trial
+            </Button>
+          </motion.div>
 
-          <p className="text-sm text-gray-500 mt-4">
+          <p className="text-sm text-muted-foreground mt-4">
             No credit card required • 14-day free trial • Cancel anytime
           </p>
         </motion.div>

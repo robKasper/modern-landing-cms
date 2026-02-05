@@ -22,7 +22,7 @@ function FAQSkeleton() {
   return (
     <div className="border-b py-4">
       <div className="animate-pulse">
-        <div className="h-5 bg-gray-200 rounded w-3/4 mb-2" />
+        <div className="h-5 bg-muted rounded w-3/4 mb-2" />
       </div>
     </div>
   )
@@ -57,13 +57,13 @@ export function FAQ() {
   }, [])
 
   return (
-    <section id="faq" className="py-20 bg-gray-50">
+    <section id="faq" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
+          <h2 className="text-4xl font-bold mb-4 font-display">
             Frequently asked questions
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-muted-foreground">
             Everything you need to know about TaskFlow
           </p>
         </div>
@@ -95,7 +95,7 @@ export function FAQ() {
                   <AccordionTrigger className="text-left text-lg">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-600 text-base prose prose-sm max-w-none">
+                  <AccordionContent className="text-muted-foreground text-base prose prose-sm prose-invert max-w-none">
                     {typeof faq.answer === 'string' ? (
                       faq.answer
                     ) : (

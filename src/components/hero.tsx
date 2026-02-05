@@ -48,16 +48,16 @@ function HeroSkeleton() {
     <section className="container mx-auto px-4 py-20">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div className="animate-pulse">
-          <div className="h-12 bg-gray-200 rounded w-full mb-4" />
-          <div className="h-12 bg-gray-200 rounded w-3/4 mb-6" />
-          <div className="h-6 bg-gray-200 rounded w-full mb-2" />
-          <div className="h-6 bg-gray-200 rounded w-5/6 mb-8" />
+          <div className="h-12 bg-muted rounded w-full mb-4" />
+          <div className="h-12 bg-muted rounded w-3/4 mb-6" />
+          <div className="h-6 bg-muted rounded w-full mb-2" />
+          <div className="h-6 bg-muted rounded w-5/6 mb-8" />
           <div className="flex gap-4">
-            <div className="h-12 bg-gray-200 rounded w-36" />
-            <div className="h-12 bg-gray-200 rounded w-36" />
+            <div className="h-12 bg-muted rounded w-36" />
+            <div className="h-12 bg-muted rounded w-36" />
           </div>
         </div>
-        <div className="bg-gray-200 rounded-2xl aspect-video animate-pulse" />
+        <div className="bg-muted rounded-2xl aspect-video animate-pulse" />
       </div>
     </section>
   );
@@ -113,10 +113,10 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight font-display text-gradient-sunset">
             {hero.headline}
           </h1>
-          <p className="text-lg sm:text-xl text-gray-600 mb-8">
+          <p className="text-lg sm:text-xl text-muted-foreground mb-8">
             {hero.subheadline}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
@@ -134,7 +134,7 @@ export function Hero() {
             )}
           </div>
           {hero.disclaimer && (
-            <p className="text-sm text-gray-500 mt-4">{hero.disclaimer}</p>
+            <p className="text-sm text-muted-foreground mt-4">{hero.disclaimer}</p>
           )}
         </motion.div>
 
@@ -143,7 +143,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-6 sm:p-8 aspect-video flex items-center justify-center overflow-hidden"
+          className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-6 sm:p-8 aspect-video flex items-center justify-center overflow-hidden border border-border"
         >
           {hero.heroImage ? (
             <Image
@@ -154,7 +154,7 @@ export function Hero() {
               className="rounded-lg object-cover"
             />
           ) : (
-            <div className="text-center text-gray-400 text-sm sm:text-base">
+            <div className="text-center text-muted-foreground text-sm sm:text-base">
               [Dashboard Screenshot Placeholder]
               <p className="text-xs sm:text-sm mt-2">
                 Add screenshot or mockup here
@@ -173,7 +173,7 @@ export function Hero() {
           className="mt-20 text-center"
         >
           {hero.socialProofText && (
-            <p className="text-sm text-gray-500 mb-8">{hero.socialProofText}</p>
+            <p className="text-sm text-muted-foreground mb-8">{hero.socialProofText}</p>
           )}
           {hero.companyLogos && hero.companyLogos.length > 0 && (
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-40">
