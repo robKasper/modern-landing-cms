@@ -26,11 +26,11 @@ A modern landing page built with Next.js and Sanity CMS. Features a complete mar
    npm install
    ```
 
-3. Create `.env.local` with your Sanity credentials:
+3. Copy the environment template and add your Sanity credentials:
+   ```bash
+   cp .env.example .env.local
    ```
-   NEXT_PUBLIC_SANITY_PROJECT_ID=your-project-id
-   NEXT_PUBLIC_SANITY_DATASET=production
-   ```
+   Then edit `.env.local` with your project ID and dataset from [sanity.io/manage](https://www.sanity.io/manage).
 
 4. Start the development server:
    ```bash
