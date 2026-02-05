@@ -1,6 +1,30 @@
 # Modern Landing CMS
 
-A modern landing page built with Next.js and Sanity CMS. Features a complete marketing site with CMS-managed testimonials and FAQs.
+A modern, fully CMS-powered landing page built with Next.js and Sanity. Every section is editable through the Sanity Studio—no code changes required to update content.
+
+**[View Live Demo →](https://modern-landing-cms.vercel.app)**
+
+![Landing Page Screenshot](public/screenshots/hero.png)
+
+## Features
+
+- **Fully CMS-Managed** - Hero, features, pricing, testimonials, and FAQs all editable in Sanity Studio
+- **Modern Stack** - Next.js 16, React 19, Tailwind CSS v4
+- **Smooth Animations** - Framer Motion scroll animations and transitions
+- **Mobile Responsive** - Optimized for all screen sizes with hamburger navigation
+- **SEO Ready** - Open Graph, Twitter Cards, sitemap, and robots.txt
+- **Loading States** - Skeleton loaders for better perceived performance
+- **Error Handling** - Graceful fallbacks if CMS is unavailable
+
+## Screenshots
+
+| Landing Page | Sanity Studio |
+|--------------|---------------|
+| ![Hero Section](public/screenshots/hero.png) | ![Sanity Studio](public/screenshots/studio.png) |
+
+| Features | Pricing |
+|----------|---------|
+| ![Features](public/screenshots/features.png) | ![Pricing](public/screenshots/pricing.png) |
 
 ## Tech Stack
 
@@ -43,12 +67,17 @@ A modern landing page built with Next.js and Sanity CMS. Features a complete mar
 
 ## Content Management
 
-The Sanity Studio at `/studio` allows you to manage:
+The Sanity Studio at `/studio` allows you to manage all landing page content:
 
-- **Testimonials**: Customer quotes with author info and avatars
-- **FAQs**: Question and answer pairs
+| Content Type | Description |
+|--------------|-------------|
+| **Hero Content** | Headline, subheadline, CTA buttons, hero image, company logos |
+| **Features** | Product features with icons, titles, and descriptions |
+| **Pricing Plans** | Pricing tiers with features list and CTA |
+| **Testimonials** | Customer quotes with author info and avatars |
+| **FAQs** | Questions with rich text answers (supports links, formatting) |
 
-Content is ordered by the `order` field in each document.
+All content types support ordering via a drag-and-drop `order` field.
 
 ## Project Structure
 
@@ -56,7 +85,9 @@ Content is ordered by the `order` field in each document.
 src/
 ├── app/                  # Next.js pages
 │   ├── page.tsx          # Landing page
-│   └── studio/           # Embedded Sanity Studio
+│   ├── studio/           # Embedded Sanity Studio
+│   ├── sitemap.ts        # Dynamic sitemap
+│   └── robots.ts         # Robots.txt config
 ├── components/           # React components
 │   └── ui/               # Reusable UI primitives
 └── sanity/
@@ -66,7 +97,9 @@ src/
 
 ## Deployment
 
-Deploy to Vercel:
+Deployed on Vercel: **[modern-landing-cms.vercel.app](https://modern-landing-cms.vercel.app)**
+
+Deploy your own:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/robKasper/modern-landing-cms)
 
