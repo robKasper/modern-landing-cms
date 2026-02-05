@@ -38,6 +38,33 @@ function TestimonialSkeleton() {
   );
 }
 
+function AvatarFallback({ name }: { name: string }) {
+  return (
+    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-semibold">
+      {name.charAt(0)}
+    </div>
+  );
+}
+
+function TestimonialAvatar({ testimonial }: { testimonial: Testimonial }) {
+  const [imageError, setImageError] = useState(false);
+
+  if (!testimonial.avatar || imageError) {
+    return <AvatarFallback name={testimonial.author} />;
+  }
+
+  return (
+    <Image
+      src={urlFor(testimonial.avatar).width(48).height(48).url()}
+      alt={`${testimonial.author}, ${testimonial.role} at ${testimonial.company}`}
+      width={48}
+      height={48}
+      className="rounded-full"
+      onError={() => setImageError(true)}
+    />
+  );
+}
+
 export function Testimonials() {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -107,23 +134,7 @@ export function Testimonials() {
                     </p>
 
                     <div className="flex items-center gap-4">
-                      {testimonial.avatar ? (
-                        <Image
-                          src={urlFor(testimonial.avatar)
-                            .width(48)
-                            .height(48)
-                            .url()}
-                          alt={`${testimonial.author}, ${testimonial.role} at ${testimonial.company}`}
-                          width={48}
-                          height={48}
-                          className="rounded-full"
-                        />
-                      ) : (
-                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-semibold">
-                          {testimonial.author.charAt(0)}
-                        </div>
-                      )}
-
+                      <TestimonialAvatar testimonial={testimonial} />
                       <div>
                         <p className="font-semibold">{testimonial.author}</p>
                         <p className="text-sm text-gray-600">

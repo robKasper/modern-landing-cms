@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { client } from '@/sanity/lib/client'
+import { PortableText, PortableTextBlock } from 'next-sanity'
 import {
   Accordion,
   AccordionContent,
@@ -13,7 +14,7 @@ import { motion } from 'framer-motion'
 interface FAQ {
   _id: string
   question: string
-  answer: string
+  answer: PortableTextBlock[] | string
   order: number
 }
 
@@ -94,8 +95,12 @@ export function FAQ() {
                   <AccordionTrigger className="text-left text-lg">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-600 text-base">
-                    {faq.answer}
+                  <AccordionContent className="text-gray-600 text-base prose prose-sm max-w-none">
+                    {typeof faq.answer === 'string' ? (
+                      faq.answer
+                    ) : (
+                      <PortableText value={faq.answer} />
+                    )}
                   </AccordionContent>
                 </AccordionItem>
               ))}

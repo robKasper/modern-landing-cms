@@ -1,4 +1,4 @@
-import { defineType, defineField } from 'sanity'
+import { defineType, defineField, defineArrayMember } from 'sanity'
 
 export default defineType({
   name: 'faq',
@@ -14,7 +14,34 @@ export default defineType({
     defineField({
       name: 'answer',
       title: 'Answer',
-      type: 'text',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'block',
+          styles: [{ title: 'Normal', value: 'normal' }],
+          marks: {
+            decorators: [
+              { title: 'Bold', value: 'strong' },
+              { title: 'Italic', value: 'em' },
+            ],
+            annotations: [
+              {
+                name: 'link',
+                type: 'object',
+                title: 'Link',
+                fields: [
+                  {
+                    name: 'href',
+                    type: 'url',
+                    title: 'URL',
+                    validation: Rule => Rule.uri({ allowRelative: true }),
+                  },
+                ],
+              },
+            ],
+          },
+        }),
+      ],
       validation: Rule => Rule.required()
     }),
     defineField({
@@ -27,7 +54,6 @@ export default defineType({
   preview: {
     select: {
       title: 'question',
-      subtitle: 'answer'
     }
   }
 })
